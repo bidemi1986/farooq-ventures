@@ -146,6 +146,42 @@ if (contactIntro) {
 }
 
 // ==========================================
+// FAQ Accordion Animation
+// ==========================================
+document.querySelectorAll('.faq-item').forEach(details => {
+    const summary = details.querySelector('summary');
+    const answer  = details.querySelector('.faq-answer');
+    if (!summary || !answer) return;
+
+    // Take over from browser — control visibility via height only
+    answer.style.overflow = 'hidden';
+    if (!details.open) answer.style.height = '0px';
+
+    summary.addEventListener('click', e => {
+        e.preventDefault();
+
+        if (details.open) {
+            // Lock current height, keep element visible, remove [open] so icon rotates
+            answer.style.height  = answer.scrollHeight + 'px';
+            answer.style.display = 'block';
+            details.removeAttribute('open');
+            animate(answer,
+                { height: '0px', opacity: [1, 0] },
+                { duration: 0.35, easing: [0.4, 0, 1, 1] }
+            );
+        } else {
+            details.setAttribute('open', '');
+            answer.style.display = 'block';
+            const targetH = answer.scrollHeight;
+            animate(answer,
+                { height: ['0px', targetH + 'px'], opacity: [0, 1] },
+                { duration: 0.4, easing: ease }
+            ).then(() => { answer.style.height = 'auto'; });
+        }
+    });
+});
+
+// ==========================================
 // FAQ Section Entrance
 // ==========================================
 inView('.faq-section', () => {

@@ -651,7 +651,7 @@ details[open] .faq-icon {
 }
 
 .faq-answer {
-    padding-bottom: 24px;
+    overflow: hidden;
 }
 
 .faq-answer p {
@@ -659,7 +659,7 @@ details[open] .faq-icon {
     color: #555;
     line-height: 1.75;
     max-width: 600px;
-    margin: 0;
+    margin: 0 0 24px;
 }
 
 /* ==========================================
