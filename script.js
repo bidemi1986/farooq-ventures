@@ -20,6 +20,36 @@ if (hero) {
 }
 
 // ==========================================
+// Hamburger Menu
+// ==========================================
+const hamburger  = document.querySelector('.nav-hamburger');
+const mobileNav  = document.querySelector('.mobile-nav');
+
+if (hamburger && mobileNav) {
+    function openMenu() {
+        hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        mobileNav.classList.add('open');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+        mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    // Close when a link is tapped
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+}
+
+// ==========================================
 // Hero Entrance Animations
 // ==========================================
 const ease = [0.22, 1, 0.36, 1];

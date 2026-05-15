@@ -167,6 +167,97 @@ body {
 }
 
 /* ==========================================
+   Hamburger Button
+   ========================================== */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+    z-index: 1001;
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+    transform-origin: center;
+}
+
+.nav.scrolled .nav-hamburger span {
+    background: #111;
+}
+
+/* Animate bars → X when open */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ==========================================
+   Mobile Nav Drawer
+   ========================================== */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(10, 10, 18, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 96px 32px 40px;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-nav.open {
+    transform: translateY(0);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.mobile-nav ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav ul li:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav ul a {
+    display: block;
+    padding: 20px 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: color 0.2s ease;
+}
+
+.mobile-nav ul a:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================
    Hero Section
    ========================================== */
 .hero {
@@ -854,7 +945,16 @@ details[open] .faq-icon {
     .nav-menu {
         display: none;
     }
-    
+
+    .nav-hamburger,
+    .mobile-nav {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
     .container {
         padding: 0 20px;
     }
