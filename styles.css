@@ -573,13 +573,9 @@ body {
 }
 
 /* Right: FAQ accordion */
-.faq-list-clip {
-    overflow: hidden;
-    position: relative;
-}
-
 .faq-list {
-    /* height controlled via JS translateY scroll */
+    display: flex;
+    flex-direction: column;
 }
 
 .faq-item {

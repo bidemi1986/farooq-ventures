@@ -207,47 +207,6 @@ inView('.footer', () => {
 }, { amount: 0.35 });
 
 // ==========================================
-// FAQ Two-Column Independent Scroll
-// Right column scrolls internally; page scroll
-// resumes only when list hits top/bottom boundary.
-// ==========================================
-(function () {
-    const faqSection  = document.querySelector('.faq-section');
-    const faqList     = document.querySelector('.faq-list');
-    const faqFormCard = document.querySelector('.faq-form-card');
-    if (!faqSection || !faqList || !faqFormCard) return;
-
-    // Wrap faq-list in a clip container so overflow is hidden
-    const clip = document.createElement('div');
-    clip.className = 'faq-list-clip';
-    faqList.parentNode.insertBefore(clip, faqList);
-    clip.appendChild(faqList);
-
-    let listY = 0;
-
-    function syncHeight() {
-        clip.style.height = faqFormCard.offsetHeight + 'px';
-    }
-    syncHeight();
-    window.addEventListener('resize', syncHeight);
-
-    function maxScroll() {
-        return Math.max(0, faqList.scrollHeight - faqFormCard.offsetHeight);
-    }
-
-    faqSection.addEventListener('wheel', function (e) {
-        const max = maxScroll();
-        if (max <= 0) return;                          // list fits — nothing to intercept
-        if (e.deltaY < 0 && listY <= 0)   return;     // at top   — let page scroll up
-        if (e.deltaY > 0 && listY >= max) return;     // at bottom — let page scroll down
-
-        e.preventDefault();
-        listY = Math.max(0, Math.min(max, listY + e.deltaY));
-        faqList.style.transform = 'translateY(-' + listY + 'px)';
-    }, { passive: false });
-}());
-
-// ==========================================
 // Smooth Scroll
 // ==========================================
 document.querySelectorAll('a[href^="#"]').forEach(a => {
