@@ -161,22 +161,29 @@ document.querySelectorAll('.faq-item').forEach(details => {
         e.preventDefault();
 
         if (details.open) {
-            // Lock current height, keep element visible, remove [open] so icon rotates
-            answer.style.height  = answer.scrollHeight + 'px';
-            answer.style.display = 'block';
-            details.removeAttribute('open');
-            animate(answer,
-                { height: '0px', opacity: [1, 0] },
-                { duration: 0.35, easing: [0.4, 0, 1, 1] }
-            );
+            // Pin the current pixel height so the browser has a start value
+            answer.style.height = answer.scrollHeight + 'px';
+            // rAF ensures the height is painted before Motion reads it
+            requestAnimationFrame(() => {
+                animate(answer,
+                    { height: '0px', opacity: [1, 0] },
+                    { duration: 0.4, easing: [0.4, 0, 1, 1] }
+                ).then(() => {
+                    details.removeAttribute('open'); // collapse only after animation
+                    answer.style.height = '0px';
+                });
+            });
         } else {
             details.setAttribute('open', '');
-            answer.style.display = 'block';
+            answer.style.height = '0px';
+            answer.style.opacity = '0';
             const targetH = answer.scrollHeight;
-            animate(answer,
-                { height: ['0px', targetH + 'px'], opacity: [0, 1] },
-                { duration: 0.4, easing: ease }
-            ).then(() => { answer.style.height = 'auto'; });
+            requestAnimationFrame(() => {
+                animate(answer,
+                    { height: [answer.style.height, targetH + 'px'], opacity: [0, 1] },
+                    { duration: 0.4, easing: ease }
+                ).then(() => { answer.style.height = 'auto'; });
+            });
         }
     });
 });
