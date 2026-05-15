@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings | Farooq Ventures Real Estate Los Angeles</title>
+    <meta name="description" content="Browse available properties in Los Angeles. Farooq Ventures represents buyers and sellers across Beverly Hills, Santa Monica, Brentwood, Calabasas, and beyond.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation (same as index.html — transparent over hero) -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Farooq Ventures</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ================================================
+         Hero
+         ================================================ -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Exceptional Properties Across Los Angeles</h1>
+            <p class="hero-subtitle">Handpicked homes and investment properties in LA's most sought-after neighborhoods. From hillside estates to coastal retreats.</p>
+            <div class="hero-buttons">
+                <a href="#listings" class="btn-primary">Browse Listings</a>
+                <a href="contact.html" class="btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&h=900&fit=crop" alt="Los Angeles luxury real estate">
+        </div>
+
+        <!-- Glassy stats tiles pinned to the bottom of the hero -->
+        <div class="hero-stats">
+            <div class="hero-stat-tile">
+                <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                <div class="stat-label">Active Listings</div>
+            </div>
+            <div class="hero-stat-tile">
+                <div class="stat-number" data-target="4" data-suffix="">4</div>
+                <div class="stat-label">Featured Markets</div>
+            </div>
+            <div class="hero-stat-tile">
+                <div class="stat-number" data-target="500" data-suffix="+">0</div>
+                <div class="stat-label">Properties Sold</div>
+            </div>
+            <div class="hero-stat-tile">
+                <div class="stat-number" data-target="15" data-suffix="+">0</div>
+                <div class="stat-label">Years in LA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================
+         Listings Stack
+         Each panel stacks over the previous using CSS sticky.
+         The same script.js animation loop handles these panels.
+         ================================================ -->
+    <section class="listings-stack" id="listings">
+
+        <!-- 01 — Beverly Hills -->
+        <div class="service-panel">
+            <div class="panel-left">
+                <div class="panel-eyebrow">01 — Beverly Hills, CA</div>
+                <div class="listing-badges">
+                    <span class="listing-badge listing-badge--sale">For Sale</span>
+                    <span class="listing-badge listing-badge--type">Single Family</span>
+                </div>
+                <h2 class="panel-title">Beverly Hills Estate</h2>
+                <div class="listing-price">$4,200,000</div>
+                <p class="panel-desc">A commanding hillside estate tucked behind private gates in the heart of Beverly Hills. Floor-to-ceiling windows frame sweeping canyon views, with a chef's kitchen, resort-style pool, and a guest house.</p>
+                <div class="listing-stats-row">
+                    <div>
+                        <span class="listing-stat-value">5</span>
+                        <span class="listing-stat-label">Beds</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">5.5</span>
+                        <span class="listing-stat-label">Baths</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">6,200</span>
+                        <span class="listing-stat-label">Sq Ft</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">2021</span>
+                        <span class="listing-stat-label">Built</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="listing-cta">Schedule a Viewing &nbsp;&#8599;</a>
+            </div>
+            <div class="panel-right">
+                <img src="https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?w=1400&h=1000&fit=crop" alt="Beverly Hills Estate">
+            </div>
+        </div>
+
+        <!-- 02 — Santa Monica (reversed: image left, text right) -->
+        <div class="service-panel panel--reversed">
+            <div class="panel-left">
+                <div class="panel-eyebrow">02 — Santa Monica, CA</div>
+                <div class="listing-badges">
+                    <span class="listing-badge listing-badge--sale">For Sale</span>
+                    <span class="listing-badge listing-badge--type">Single Family</span>
+                </div>
+                <h2 class="panel-title">Santa Monica Coastal Retreat</h2>
+                <div class="listing-price">$2,750,000</div>
+                <p class="panel-desc">Steps from the sand and the iconic Santa Monica Pier, this light-filled home blends indoor-outdoor California living at its finest. Open-plan great room, wraparound deck, and a private garden oasis.</p>
+                <div class="listing-stats-row">
+                    <div>
+                        <span class="listing-stat-value">4</span>
+                        <span class="listing-stat-label">Beds</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">3</span>
+                        <span class="listing-stat-label">Baths</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">3,100</span>
+                        <span class="listing-stat-label">Sq Ft</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">2019</span>
+                        <span class="listing-stat-label">Built</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="listing-cta">Schedule a Viewing &nbsp;&#8599;</a>
+            </div>
+            <div class="panel-right">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&h=1000&fit=crop" alt="Santa Monica Coastal Retreat">
+            </div>
+        </div>
+
+        <!-- 03 — Brentwood (dark panel: black bg, orange price) -->
+        <div class="service-panel panel--dark">
+            <div class="panel-left">
+                <div class="panel-eyebrow">03 — Brentwood, CA</div>
+                <div class="listing-badges">
+                    <span class="listing-badge listing-badge--sale">For Sale</span>
+                    <span class="listing-badge listing-badge--type">Contemporary</span>
+                </div>
+                <h2 class="panel-title">Brentwood Modern</h2>
+                <div class="listing-price">$3,600,000</div>
+                <p class="panel-desc">Architecturally striking new construction in one of LA's most coveted zip codes. Clean lines, natural stone finishes, a wine cellar, and a seamless connection between the great room and the entertainer's backyard.</p>
+                <div class="listing-stats-row">
+                    <div>
+                        <span class="listing-stat-value">4</span>
+                        <span class="listing-stat-label">Beds</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">4</span>
+                        <span class="listing-stat-label">Baths</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">4,400</span>
+                        <span class="listing-stat-label">Sq Ft</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">2023</span>
+                        <span class="listing-stat-label">Built</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="listing-cta">Schedule a Viewing &nbsp;&#8599;</a>
+            </div>
+            <div class="panel-right">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&h=1000&fit=crop" alt="Brentwood Modern">
+            </div>
+        </div>
+
+        <!-- 04 — Calabasas (inset: padded + rounded image) -->
+        <div class="service-panel panel--image-inset">
+            <div class="panel-left">
+                <div class="panel-eyebrow">04 — Calabasas, CA</div>
+                <div class="listing-badges">
+                    <span class="listing-badge listing-badge--sale">For Sale</span>
+                    <span class="listing-badge listing-badge--type">Gated Community</span>
+                </div>
+                <h2 class="panel-title">Calabasas Family Home</h2>
+                <div class="listing-price">$1,950,000</div>
+                <p class="panel-desc">Gated and private in one of the valley's premier communities, this spacious family home offers generous living areas, a backyard pool, a bonus media room, and access to top-rated Las Virgenes schools.</p>
+                <div class="listing-stats-row">
+                    <div>
+                        <span class="listing-stat-value">5</span>
+                        <span class="listing-stat-label">Beds</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">4</span>
+                        <span class="listing-stat-label">Baths</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">5,000</span>
+                        <span class="listing-stat-label">Sq Ft</span>
+                    </div>
+                    <div>
+                        <span class="listing-stat-value">2017</span>
+                        <span class="listing-stat-label">Built</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="listing-cta">Schedule a Viewing &nbsp;&#8599;</a>
+            </div>
+            <div class="panel-right">
+                <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1400&h=1000&fit=crop" alt="Calabasas Family Home">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ================================================
+         Footer (identical to index.html and contact.html)
+         ================================================ -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-info">
+                <p class="footer-desc">Farooq Ventures is a premier real estate firm serving buyers, sellers, and investors across Los Angeles. We combine deep local expertise with personalized service to deliver results you can count on.</p>
+                <div class="footer-contact-list">
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-label">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 8.63a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>PHONE</span>
+                        </div>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-label">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span>EMAIL</span>
+                        </div>
+                        <p>info@farooqventures.com</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-label">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>ADDRESS</span>
+                        </div>
+                        <p>123 Wilshire Blvd, Suite 500, Los Angeles, CA 90010</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-label">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>OFFICE HOURS</span>
+                        </div>
+                        <p>Mon to Fri 9:00am &ndash; 6:00pm</p>
+                        <p>Sat &amp; Sun: By Appointment</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="footer-nav">
+                <a href="index.html">Home <span class="footer-nav-arrow">&#8599;</span></a>
+                <a href="index.html#services">Services <span class="footer-nav-arrow">&#8599;</span></a>
+                <a href="listings.html">Listings <span class="footer-nav-arrow">&#8599;</span></a>
+                <a href="contact.html">Contact <span class="footer-nav-arrow">&#8599;</span></a>
+            </nav>
+        </div>
+
+        <div class="footer-social-bar">
+            <a href="#" class="footer-social-item">
+                <span>Facebook</span>
+                <span class="footer-social-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </span>
+            </a>
+            <a href="#" class="footer-social-item">
+                <span>Instagram</span>
+                <span class="footer-social-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </span>
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Farooq Ventures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Motion.js — same script handles nav + stacking panel animations -->
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
