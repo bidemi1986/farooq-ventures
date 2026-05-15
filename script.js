@@ -119,10 +119,9 @@ document.querySelectorAll('.service-panel').forEach((panel, i) => {
         }
     };
 
-    // All panels animate via inView — fire when 80% of the panel is visible
-    // (the panel is nearly full-screen before animations start, so text
-    // is readable as it comes in rather than animating off-screen at the bottom)
-    inView(panel, triggerAnimation, { amount: 0.8 });
+    // Fire when the panel just starts entering the viewport.
+    // Low amount (0.15) prevents blank panels on mobile where 80% never fits.
+    inView(panel, triggerAnimation, { amount: 0.15 });
 });
 
 // ==========================================
@@ -168,11 +167,11 @@ if (contactIntro) {
         animate('.contact-intro-heading',{ opacity: [0, 1], y: [80, 0], scale: [0.88, 1], filter: ['blur(10px)', 'blur(0px)'] }, { duration: 0.9,  delay: 0.12, easing: ease });
         animate('.contact-detail-item',  { opacity: [0, 1], y: [40, 0]                                                        }, { duration: 0.55, delay: stagger(0.09, { start: 0.35 }), easing: ease });
         animate('.contact-form-card',    { opacity: [0, 1], y: [60, 0], scale: [0.96, 1]                                     }, { duration: 0.75, delay: 0.40, easing: ease });
-    }, { amount: 0.2 });
+    }, { amount: 0.05 });
 
     inView('.contact-map-section', () => {
         animate('.contact-map-section', { opacity: [0, 1], scale: [0.98, 1] }, { duration: 0.8, easing: ease });
-    }, { amount: 0.3 });
+    }, { amount: 0.1 });
 }
 
 // ==========================================
@@ -230,7 +229,7 @@ inView('.faq-section', () => {
         delay: stagger(0.08, { start: 0.42 }),
         easing: ease
     });
-}, { amount: 0.25 });
+}, { amount: 0.1 });
 
 // ==========================================
 // Footer
@@ -241,7 +240,7 @@ inView('.footer', () => {
         delay: stagger(0.1),
         easing: ease
     });
-}, { amount: 0.35 });
+}, { amount: 0.1 });
 
 // ==========================================
 // Smooth Scroll
